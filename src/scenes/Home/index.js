@@ -13,12 +13,12 @@ import Comparator from '../../components/Comparator'
 import FadingCarousel from '../../components/FadingCarousel'
 
 const scenario = `
-async function scenario(browser, takeScreenshot, baseUrl) {
-  // Go to any URL
+async function scenario(browser, baseUrl) {
+  // Go to your environment URL
   await browser.get(baseUrl + '/signin')
 
   // Take your first screenshot
-  await takeScreenshot('Signin', 'The signin page')
+  await browser.takeScreenshot('Signin', 'The signin page')
 
   // Get DOM elements
   const emailInput = await browser.elementByCssSelector('#email')
@@ -33,14 +33,16 @@ async function scenario(browser, takeScreenshot, baseUrl) {
   await submitButton.click()
 
   // Take the second screenshot
-  await takeScreenshot('Home', 'The main route')
+  await browser.takeScreenshot('Home', 'The main route')
 
   // Test your UI functionally
   const banner = await browser.elementByCssSelector('.banner')
+  const bannerText = await banner.text()
 
-  assert(banner)
+  assert(bannerText === 'Welcome!')
 }
 `
+
 function Home() {
   return (
     <>
