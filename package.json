@@ -23,6 +23,10 @@
     "react-scripts": "3.0.1",
     "react-syntax-highlighter": "^10.3.2"
   },
+  "devDependencies": {
+    "eslint": "^5.16.0",
+    "eslint-config-dherault": "^1.0.2"
+  },
   "eslintConfig": {
     "extends": "react-app"
   },
@@ -37,9 +41,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "devDependencies": {
-    "eslint": "^6.0.1",
-    "eslint-config-dherault": "^1.0.2"
   }
 }

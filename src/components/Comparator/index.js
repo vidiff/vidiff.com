@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from 'react'
+import React, { Component, useState, useEffect } from 'react'
 
 import './index.css'
 
-import useTheme from '@material-ui/styles/useTheme';
-import Typography from '@material-ui/core/Typography';
+import useTheme from '@material-ui/styles/useTheme'
+import Typography from '@material-ui/core/Typography'
 
 const slides = [
   {
@@ -33,34 +33,45 @@ const animationStandByDuration = 3500
 
 const ref = React.createRef()
 
-function Comparator(props) {
-  const [i, setI] = useState(0)
-  const [height, setHeight] = useState(0)
-  const slide = slides[i]
+class Comparator extends Component {
 
-  useEffect(() => {
-    const interval = setInterval(() => {
+  state = {
+    i: 0,
+    height: 0,
+  }
+
+  componentDidMount() {
+    this.intervalId = setInterval(() => {
+      const { i } = this.state
+
       let ii = i + 1
 
       if (ii >= slides.length) ii = 0
 
-      setI(ii)
+      this.setState({ i: ii })
     }, animationDifferenceTimeout + animationStandByDuration)
 
-    setTimeout(() => setHeight(ref.current.clientHeight), 50)
+    setTimeout(() => this.setState({ height: ref.current.clientHeight }), 50)
+  }
 
-    return () => clearInterval(interval)
-  })
+  componentWillUnmount() {
+    clearInterval(this.intervalId)
+  }
 
-  return (
-    <div
-      {...props}
-      ref={ref}
-      style={{ minHeight: height }}
-    >
-      <Slide key={i} slide={slide} />
-    </div>
-  )
+  render() {
+    const { i, height } = this.state
+    const slide = slides[i]
+
+    return (
+      <div
+        {...this.props}
+        ref={ref}
+        style={{ minHeight: height }}
+      >
+        <Slide key={i} slide={slide} />
+      </div>
+    )
+  }
 }
 
 function Slide({ slide }) {
