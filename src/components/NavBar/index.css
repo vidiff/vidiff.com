@@ -1,0 +1,20 @@
+.NavBar-link,
+.NavBar-link:active,
+.NavBar-link:focus,
+.NavBar-link:visited {
+  color: #3a52bb;
+}
+
+.NavBar-menu-mobile {
+  display: none;
+}
+
+@media screen and (max-width: 600px) {
+  .NavBar-menu-desktop {
+    display: none;
+  }
+
+  .NavBar-menu-mobile {
+    display: flex;
+  }
+}

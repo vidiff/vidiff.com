@@ -1,0 +1,43 @@
+.Home-capability {
+  width: 64px;
+  height: 64px;
+}
+
+.Home-body {
+  font-size: 1.25rem !important;
+  line-height: 1.25rem !important;
+}
+
+.Home-image-wrapper {
+  min-width: 60%;
+  width: 60%;
+  overflow: hidden;
+}
+
+.Home-image {
+  width: 100%;
+}
+
+.Home-scenario {
+  min-width: 60% !important;
+  overflow-x: auto;
+}
+
+@media screen and (max-width: 600px) {
+  .Home-call {
+    text-align: center;
+  }
+
+  .Home-comparator {
+    display: none;
+  }
+
+  .Home-container {
+    flex-wrap: wrap;
+  }
+
+  .Home-image-wrapper {
+    min-width: 100%;
+    width: 100%;
+  }
+}

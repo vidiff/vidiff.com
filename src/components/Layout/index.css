@@ -1,0 +1,11 @@
+.Layout {
+  min-height: 100vh;
+}
+
+.Layout-brand,
+.Layout-brand:active,
+.Layout-brand:focus,
+.Layout-brand:visited {
+  text-decoration: none;
+  color: inherit;
+}

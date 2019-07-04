@@ -1,0 +1,32 @@
+.Comparator {
+  position: relative;
+  transition: all 0.2s linear;
+}
+
+.Slide {
+  width: 100%;
+  position: relative;
+  transition: all 0.2s linear;
+}
+
+.Slide-image {
+  width: 47.5%;
+}
+
+.Slide-image-comparison {
+  position: absolute;
+  transition: all 0.5s ease-in-out;
+}
+
+.Slide-image-difference {
+  position: absolute;
+  left: 0;
+  transition: all 0.5s linear;
+  z-index: 999;
+}
+
+.Slide-info {
+  position: absolute;
+  left: 50%;
+  transition: all 0.5s linear;
+}

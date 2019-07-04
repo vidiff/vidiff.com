@@ -1,0 +1,15 @@
+.FadingCarousel {
+  position: relative;
+}
+
+.FadingCarousel > img {
+  width: 100%;
+  transition: opacity 0.2s linear;
+}
+
+.FadingCarousel > img:last-child {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+}
