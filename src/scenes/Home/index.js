@@ -133,7 +133,7 @@ function Home() {
             Test visually and functionally
           </Typography>
           <Typography className="Home-body mt-3">
-            Run scenario functions against stage URLs to take screenshots and make assertions on your app's functionalities.
+            Run scenario functions against environment URLs to take screenshots and make assertions on your app's functionalities.
           </Typography>
         </div>
         <SyntaxHighlighter
