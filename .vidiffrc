@@ -1,0 +1,41 @@
+{
+  "branchToUrlMapping": {
+    "master": "https://vidiff.com",
+    "dev": "https://staging.vidiff.com"
+  },
+  scenarios: [
+    {
+      "name": "Scenario 1",
+      "entry": "test/scenario.js",
+      "capabilities": [
+        {
+          "platform": "WIN10",
+          "browserName": "chrome",
+          "version": "75"
+        },
+        {
+          "platform": "WIN10",
+          "browserName": "firefox",
+          "version": "67"
+        },
+        {
+          "platform": "MOJAVE",
+          "browserName": "safari",
+          "version": "12"
+        },
+        {
+          "platform": "WIN10",
+          "browserName": "microsoftedge",
+          "version": "18"
+        },
+        {
+          "platform": "ANDROID",
+          "platformName": "Android",
+          "deviceName": "Pixel 2",
+          "browserName": "Chrome",
+          "version": "7.1"
+        }
+      ]
+    }
+  ]
+}
