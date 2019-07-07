@@ -7,10 +7,14 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "sync-s3": "aws s3 sync build/ s3://vidiff.com --region eu-west-3",
-    "invalidate-cloudfront": "aws cloudfront create-invalidation --distribution-id E7T12U7ZGR3SG --paths \"/*\"",
-    "deploy": "npm run sync-s3 && npm run invalidate-cloudfront",
-    "build-deploy": "npm run build && npm run deploy"
+    "build-deploy:production": "npm run build && npm run deploy:production",
+    "deploy:production": "npm run sync-s3:production && npm run invalidate-cloudfront:production",
+    "sync-s3:production": "npx git-branch-is master && aws s3 sync build/ s3://vidiff.com --region eu-west-3",
+    "invalidate-cloudfront:production": "npx git-branch-is master && aws cloudfront create-invalidation --distribution-id E7T12U7ZGR3SG --paths \"/*\"",
+    "build-deploy:staging": "npm run build && npm run deploy:staging",
+    "deploy:staging": "npm run sync-s3:staging && npm run invalidate-cloudfront:staging",
+    "sync-s3:staging": "npx git-branch-is dev && aws s3 sync build/ s3://integration.vidiff.com --region eu-west-3",
+    "invalidate-cloudfront:staging": "npx git-branch-is dev && aws cloudfront create-invalidation --distribution-id E2CI450KWOZSSI --paths \"/*\""
   },
   "dependencies": {
     "@material-ui/core": "^4.1.3",
