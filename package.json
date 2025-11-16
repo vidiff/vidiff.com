@@ -24,11 +24,11 @@
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-router-dom": "^5.0.1",
-    "react-scripts": "3.0.1",
+    "react-scripts": "5.0.1",
     "react-syntax-highlighter": "^10.3.2"
   },
   "devDependencies": {
-    "eslint": "^5.16.0",
+    "eslint": "^9.39.1",
     "eslint-config-dherault": "^1.0.2"
   },
   "eslintConfig": {
